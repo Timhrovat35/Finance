@@ -1,0 +1,22 @@
+.content{
+    margin-left:200px;
+}
+.profile-picture-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #111D4A;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+body {
+    background-color: #CDD1E2;
+    margin: 0;
+    padding: 30px;
+  }
+  
+  .app {
+    height: 100vh;
+  };

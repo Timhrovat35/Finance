@@ -1,0 +1,62 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px; /* Adjust the width as needed */
+    height: 100vh;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Add shadow to the right border */
+    background-color: white; /* Adjust the background color as needed */
+  }
+  
+  .sidebar .navbar-logo {
+    margin: 20px; /* Adjust the margin as needed */
+    color: #111D4A; /* Adjust the logo color as needed */
+  }
+  
+  .sidebar .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar .nav-menu li {
+    padding: 10px;
+  }
+  
+  .sidebar .nav-menu li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000; /* Adjust the link color as needed */
+  }
+  
+  .sidebar .nav-menu li a i {
+    margin-right: 10px; /* Adjust the icon margin as needed */
+  }
+  
+  .sidebar .nav-menu li a .link-text {
+    display: none; /* Hide the link text */
+  }
+  .sidebar .login-logout {
+    margin-top: auto;
+    padding: 10px;
+  }
+  
+  .sidebar .login-logout button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #111D4A;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .sidebar .login-logout button:hover {
+    background-color: #0D1630;
+  }
+  
