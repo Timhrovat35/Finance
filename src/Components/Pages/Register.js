@@ -2,25 +2,52 @@ import React from 'react';
 import './Register.css';
 
 function Register() {
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const email = event.target.elements.email.value;
     const username = event.target.elements.username.value;
     const password = event.target.elements.password.value;
     const confirmPassword = event.target.elements.confirmPassword.value;
-    
+
     if (!email || !username || !password || !confirmPassword) {
       alert("Please fill in all fields");
       return;
     }
-    
+
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
-    
-    // Proceed with registration logic
-    // ...
+
+    const data = {
+      username: username,
+      email: email,
+      password: password
+    };
+
+    try {
+      const response = await fetch('http://localhost:8000/api/register/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.status === 201) {
+        // Registration success
+        alert("Registration successful!");
+      } else if (response.status === 400) {
+        // Registration failed
+        alert("Registration failed");
+      } else {
+        // Handle other status codes
+        alert("Something went wrong");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred");
+    }
   };
 
   return (

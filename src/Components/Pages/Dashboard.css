@@ -42,4 +42,40 @@
   .transaction-table tr:hover {
     background-color: #eaeaea;
   }
+  .login-btn button{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #111D4A;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .login-btn button:hover {
+    background-color: #0D1630;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .add-button button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #111D4A;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
   
+  .add-buton button:hover {
+    background-color: #0D1630;
+  }

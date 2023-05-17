@@ -2,18 +2,50 @@ import React from 'react';
 import './Login.css';
 
 function Login() {
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const username = event.target.elements.username.value;
     const password = event.target.elements.password.value;
-    
+
     if (!username || !password) {
       alert("Please fill in all fields");
       return;
     }
-    
-    // Proceed with login logic
-    // ...
+
+    const data = {
+      username: username,
+      password: password
+    };
+
+    try {
+      const response = await fetch('http://localhost:8000/api/auth/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.status === 200) {
+        const { token } = await response.json();
+        // Login success
+        alert("Login successful!");
+        console.log("Token:", token);
+        // Store the token in localStorage or a secure storage mechanism
+        // Redirect to the authenticated area or perform further actions
+        localStorage.setItem('token', token);
+        window.location.href = '/'; // Redirect to the home page
+      } else if (response.status === 400) {
+        // Login failed
+        alert("Login failed");
+      } else {
+        // Handle other status codes
+        alert("Something went wrong");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred");
+    }
   };
 
   return (
